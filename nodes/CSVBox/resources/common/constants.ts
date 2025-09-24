@@ -1,0 +1,1 @@
+export const Baseurl = "https://app.csvbox.io/n8nworkflow/api/v1"

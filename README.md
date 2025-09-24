@@ -1,48 +1,109 @@
-![Banner image](https://user-images.githubusercontent.com/10284570/173569848-c624317f-42b1-45a6-ab09-f0ea3c247648.png)
+![CSVBox for n8n](https://user-images.githubusercontent.com/10284570/173569848-c624317f-42b1-45a6-ab09-f0ea3c247648.png)
 
-# n8n-nodes-starter
+# n8n-nodes-csvbox
+## Overview
 
-This repo contains example nodes to help you get started building your own custom integrations for [n8n](https://n8n.io). It includes the node linter and other dependencies.
+This is an n8n community node. It lets you use [CSVBox](https://csvbox.io/) in your n8n workflows.
 
-To make your custom node available to the community, you must create it as an npm package, and [submit it to the npm registry](https://docs.npmjs.com/packages-and-modules/contributing-packages-to-the-registry).
+CSVBox is a platform for importing CSV data into your applications with ease. This node allows you to trigger n8n workflows when new rows are imported into a CSVBox Importer.
 
-If you would like your node to be available on n8n cloud you can also [submit your node for verification](https://docs.n8n.io/integrations/creating-nodes/deploy/submit-community-nodes/).
+[n8n](https://n8n.io/) is a [fair-code licensed](https://docs.n8n.io/reference/license/) workflow automation platform.
 
-## Prerequisites
+---
 
-You need the following installed on your development machine:
+## Table of Contents
 
-* [git](https://git-scm.com/downloads)
-* Node.js and npm. Minimum version Node 20. You can find instructions on how to install both using nvm (Node Version Manager) for Linux, Mac, and WSL [here](https://github.com/nvm-sh/nvm). For Windows users, refer to Microsoft's guide to [Install NodeJS on Windows](https://docs.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-windows).
-* Install n8n with:
-  ```
-  npm install n8n -g
-  ```
-* Recommended: follow n8n's guide to [set up your development environment](https://docs.n8n.io/integrations/creating-nodes/build/node-development-environment/).
+- [Installation](#installation)
+- [Operations](#operations)
+- [Credentials](#credentials)
+- [Compatibility](#compatibility)
+- [Usage](#usage)
+- [Resources](#resources)
+- [License](#license)
 
-## Using this starter
+---
 
-These are the basic steps for working with the starter. For detailed guidance on creating and publishing nodes, refer to the [documentation](https://docs.n8n.io/integrations/creating-nodes/).
+## Installation
 
-1. [Generate a new repository](https://github.com/n8n-io/n8n-nodes-starter/generate) from this template repository.
-2. Clone your new repo:
+You can install this node as a community package in your n8n instance.
+
+### Option 1: Install via n8n UI
+
+1. Go to **Settings → Community Nodes** in your n8n instance.
+2. Click **Install a community node** and enter:
    ```
-   git clone https://github.com/<your organization>/<your-repo-name>.git
+   n8n-nodes-csvbox
    ```
-3. Run `npm i` to install dependencies.
-4. Open the project in your editor.
-5. Browse the examples in `/nodes` and `/credentials`. Modify the examples, or replace them with your own nodes.
-6. Update the `package.json` to match your details.
-7. Run `npm run lint` to check for errors or `npm run lintfix` to automatically fix errors when possible.
-8. Test your node locally. Refer to [Run your node locally](https://docs.n8n.io/integrations/creating-nodes/test/run-node-locally/) for guidance.
-9. Replace this README with documentation for your node. Use the [README_TEMPLATE](README_TEMPLATE.md) to get started.
-10. Update the LICENSE file to use your details.
-11. [Publish](https://docs.npmjs.com/packages-and-modules/contributing-packages-to-the-registry) your package to npm.
+3. Check the warning button.
+4. Click on the **Install** and wait for the installation to complete.
+4. Restart n8n if prompted.
 
-## More information
+### Option 2: Manual Installation
 
-Refer to our [documentation on creating nodes](https://docs.n8n.io/integrations/creating-nodes/) for detailed information on building your own nodes.
+1. Clone this repository:
+   ```sh
+   git clone https://github.com/csvbox-io/n8n-nodes-csvbox.git
+   cd n8n-nodes-csvbox
+   ```
+2. Install dependencies:
+   ```sh
+   pnpm install
+   ```
+3. Build the project:
+   ```sh
+   npm run build
+   ```
+4. Copy the contents of the `dist` folder into your n8n custom nodes directory (see [n8n documentation](https://docs.n8n.io/integrations/community-nodes/installation/)).
+5. Restart your n8n instance.
+
+After installation, you’ll find the **CSVBox Trigger** node available in your n8n workflow editor.
+
+---
+
+## Operations
+
+This package provides the following node:
+
+- **CSVBox Trigger**: Starts a workflow when a new row is imported to a CSVBox Sheet.
+
+---
+
+## Credentials
+
+Create an API Key and Secret Key from the CSVBox API Key Page, then add them as a credential in n8n using the following fields:
+
+- **API Key:** Your CSVBox API Key.
+- **API Secret Key:** Your CSVBox Secret Key.
+
+---
+
+## Compatibility
+
+- **Minimum n8n version:** 1.x
+- **Node.js version:** >= 20.15
+- Tested on latest n8n and Node.js LTS.
+
+---
+
+## Usage
+
+1. In your n8n workflow editor, add the **CSVBox Trigger** node.
+2. Choose your CSVBox credential from the dropdown (set up your API Key and Secret in n8n Credentials first).
+3. Select the Sheet name you want to monitor for new imports.
+4. Click **Fetch and execute** to test the trigger and preview sample data from your sheet.
+5. Once you see the sample data, connect and map it to the next node in your workflow.
+6. Activate your workflow. Now, whenever new rows are imported into your selected CSVBox sheet, your workflow will run automatically.
+
+---
+
+## Resources
+
+- [CSVBox Documentation](https://help.csvbox.io/)
+- [n8n community nodes documentation](https://docs.n8n.io/integrations/#community-nodes)
+- [Submit your node to n8n cloud](https://docs.n8n.io/integrations/creating-nodes/deploy/submit-community-nodes/)
+
+---
 
 ## License
 
-[MIT](https://github.com/n8n-io/n8n-nodes-starter/blob/master/LICENSE.md)
+[MIT](LICENSE.md)
