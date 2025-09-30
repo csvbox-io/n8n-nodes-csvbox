@@ -7,7 +7,7 @@ import type {
 	IDataObject
 } from 'n8n-workflow';
 import { NodeApiError, NodeConnectionTypes } from 'n8n-workflow';
-import { csvboxApiRequest, testSampleRow } from './GenericFunctions';
+import { csvboxApiRequest, testSampleRow } from './resources/GenericFunctions';
 import { loadOptions } from './resources/methods';
 
 export class CsvboxTrigger implements INodeType {
@@ -99,7 +99,7 @@ export class CsvboxTrigger implements INodeType {
 			target_url: webhookUrl,
 		}
 		if(this.getMode() === 'manual') {
-			await testSampleRow.call(this, webhookUrl);
+			await testSampleRow.call(this, webhookUrl as string);
 			return true;
 		}
 
