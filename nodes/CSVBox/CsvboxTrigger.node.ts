@@ -17,7 +17,6 @@ export class CsvboxTrigger implements INodeType {
 		icon: 'file:csvbox-logo.svg',
 		group: ['trigger'],
 		version: 1,
-		subtitle: '={{$parameter["sheetId"]}}',
 		description: 'Starts a workflow when a new row is imported to a CSVBox Sheet',
 		defaults: {
 			name: 'CSVBox Trigger',
