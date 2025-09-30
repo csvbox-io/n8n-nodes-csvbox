@@ -10,7 +10,7 @@ import {
 export class CsvboxApi implements ICredentialType {
 	name = 'csvboxApi';
 	displayName = 'CSVBox API';
-	documentationUrl = 'https://github.com/n8n-io/n8n/blob/master/packages/nodes-base/nodes/Bitbucket/BitbucketTrigger.node.json';
+	documentationUrl = 'https://help.csvbox.io/destinations/n8n';
 	
 	properties: INodeProperties[] = [
 		{
