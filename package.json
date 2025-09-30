@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-csvbox",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A custom n8n node to trigger workflows from CSVBox imports.",
   "keywords": [
     "n8n-community-node-package",
