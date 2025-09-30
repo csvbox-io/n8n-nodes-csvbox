@@ -27,7 +27,7 @@ CSVBox is a platform for importing CSV data into your applications with ease. Th
 
 You can install this node as a community package in your n8n instance.
 
-### Option 1: Install via n8n UI
+### Steps
 
 1. Go to **Settings → Community Nodes** in your n8n instance.
 2. Click **Install a community node** and enter:
@@ -37,24 +37,6 @@ You can install this node as a community package in your n8n instance.
 3. Check the warning button.
 4. Click on the **Install** and wait for the installation to complete.
 4. Restart n8n if prompted.
-
-### Option 2: Manual Installation
-
-1. Clone this repository:
-   ```sh
-   git clone https://github.com/csvbox-io/n8n-nodes-csvbox.git
-   cd n8n-nodes-csvbox
-   ```
-2. Install dependencies:
-   ```sh
-   pnpm install
-   ```
-3. Build the project:
-   ```sh
-   npm run build
-   ```
-4. Copy the contents of the `dist` folder into your n8n custom nodes directory (see [n8n documentation](https://docs.n8n.io/integrations/community-nodes/installation/)).
-5. Restart your n8n instance.
 
 After installation, you’ll find the **CSVBox Trigger** node available in your n8n workflow editor.
 
@@ -98,9 +80,8 @@ Create an API Key and Secret Key from the CSVBox API Key Page, then add them as 
 
 ## Resources
 
-- [CSVBox Documentation](https://help.csvbox.io/)
+- [CSVBox Documentation](https://help.csvbox.io/destinations/n8n)
 - [n8n community nodes documentation](https://docs.n8n.io/integrations/#community-nodes)
-- [Submit your node to n8n cloud](https://docs.n8n.io/integrations/creating-nodes/deploy/submit-community-nodes/)
 
 ---
 
