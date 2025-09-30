@@ -34,7 +34,7 @@
       "dist/credentials/CsvboxApi.credentials.js"
     ],
     "nodes": [
-      "dist/nodes/CsvboxTrigger.node.js"
+      "dist/nodes/CSVBox/CsvboxTrigger.node.js"
     ]
   },
   "devDependencies": {
