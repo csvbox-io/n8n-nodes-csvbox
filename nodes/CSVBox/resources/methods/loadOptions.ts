@@ -5,7 +5,6 @@ import { csvboxApiRequest } from "../GenericFunctions";
 export async function getSheets(this: ILoadOptionsFunctions): Promise<INodePropertyOptions[]> {
     const returnData: INodePropertyOptions[] = [];
     const response = await csvboxApiRequest.call(this, 'GET', '/list-sheets');
-    console.log('Sheets response:', response);
     if (Array.isArray(response)) {
         for (const sheet of response) {
             returnData.push({
